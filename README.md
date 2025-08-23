@@ -14,8 +14,6 @@ ViperaDev, bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üretic
 
 ## Klasör Yapısı
 
-## Klasör Yapısı
-
 ```
 ViperaDev.com/
 │
@@ -43,5 +41,6 @@ ViperaDev.com/
 ---
 
 **ViperaDev — Enter'a
+
 
 
