@@ -14,18 +14,23 @@ ViperaDev, bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üretic
 
 ## Klasör Yapısı
 
-- `index.html` — Ana sayfa ve tüm içerik.
-- `style.css` — Tüm siteye ait stiller ve animasyonlar.
-- `icons/` — SVG ikonlar (GitHub, LinkedIn, Instagram, YouTube, X, itch.io, logo).
+## Klasör Yapısı
 
-## Kullanım
-
-1. Depoyu bilgisayarınıza klonlayın:
-   ```
-   git clone https://github.com/Vipera-Dev/ViperaDev.com.git
-   ```
-2. Dosyaları bir web sunucusunda veya doğrudan tarayıcıda açabilirsiniz:
-   - `index.html` dosyasını çift tıklayarak açın.
+```
+ViperaDev.com/
+│
+├── index.html        # Ana sayfa ve tüm içerik
+├── style.css         # Tüm siteye ait stiller ve animasyonlar
+├── icons/            # SVG ikonlar (GitHub, LinkedIn, Instagram, YouTube, X, itch.io, logo)
+│   ├── github.svg
+│   ├── linkedin.svg
+│   ├── instagram.svg
+│   ├── youtube.svg
+│   ├── x.svg
+│   ├── itchio.svg
+│   └── logo.svg
+└── README.md         # Proje açıklaması ve kullanım rehberi
+```
 
 ## Teknik Detaylar
 
@@ -38,4 +43,5 @@ ViperaDev, bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üretic
 ---
 
 **ViperaDev — Enter'a
+
 
