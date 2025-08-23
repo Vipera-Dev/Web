@@ -1,24 +1,30 @@
+/* =========================================================
+   VIPERA DEV — ANA KOD vNext (Aurora + Neon Grid + Stars + Anim Pack)
+   ========================================================= */
+
 /* #region VARS — Renk Paleti ve Ölçüler */
-/* Tasarım değişkenleri */
 :root {
-  --bg: #0b1220;
-  --panel: #0f172a;
-  --card: #111827;
+  --bg: #05070e; /* koyu zemin */
+  --panel: #0f172a; /* paneller */
+  --card: #111827; /* kart tabanı */
   --text: #e5e7eb;
   --muted: #94a3b8;
   --line: #1f2937;
-  --c1: #22d3ee;
-  --c2: #22c55e;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --c1: #22d3ee; /* turkuaz */
+  --c2: #22c55e; /* yeşil */
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
   --radius: 20px;
   --max: 1100px;
 }
+/* #endregion */
 
-/* #endregion VARS — Renk Paleti ve Ölçüler */
 /* #region RESET — Varsayılan Sıfırlama ve Gövde */
-/* Reset & base */
 * {
   box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
 }
 body {
   margin: 0;
@@ -28,13 +34,118 @@ body {
   color: var(--text);
   line-height: 1.5;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  perspective: 1000px;
 }
 a {
   color: inherit;
   text-decoration: none;
 }
+/* #endregion */
 
-/* Keyframes */
+/* =========================================================
+   ARKA PLAN — Aurora + Yavaş Neon Grid + Hafif Yıldızlar
+   ========================================================= */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+body::before {
+  /* Aurora blur */
+  z-index: -3;
+  background: radial-gradient(
+      60rem 40rem at 10% 10%,
+      rgba(34, 211, 238, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      50rem 32rem at 85% 20%,
+      rgba(34, 197, 94, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      40rem 26rem at 20% 85%,
+      rgba(255, 255, 255, 0.08),
+      transparent 60%
+    );
+  filter: blur(24px) saturate(120%);
+  animation: aurora 24s ease-in-out infinite alternate;
+}
+body::after {
+  /* Neon grid + yıldızlar */
+  z-index: -2;
+  background:
+    /* Neon grid */ linear-gradient(
+        90deg,
+        rgba(34, 211, 238, 0.12) 1px,
+        transparent 1px
+      )
+      0 0/60px 60px,
+    linear-gradient(rgba(34, 197, 94, 0.12) 1px, transparent 1px) 0 0/60px 60px,
+    /* Stars */
+      radial-gradient(
+        2px 2px at 20% 30%,
+        rgba(255, 255, 255, 0.8),
+        transparent 50%
+      ),
+    radial-gradient(
+      1.5px 1.5px at 80% 40%,
+      rgba(255, 255, 255, 0.7),
+      transparent 50%
+    ),
+    radial-gradient(
+      1.2px 1.2px at 50% 70%,
+      rgba(255, 255, 255, 0.9),
+      transparent 50%
+    ),
+    radial-gradient(
+      1px 1px at 65% 20%,
+      rgba(255, 255, 255, 0.6),
+      transparent 50%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 30% 80%,
+      rgba(255, 255, 255, 0.75),
+      transparent 50%
+    );
+  opacity: 0.35;
+  animation: neonGridMove 60s linear infinite, starsDrift 180s linear infinite;
+}
+
+/* #region KEYFRAMES — Animasyon Seti */
+@keyframes aurora {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -1%, 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(-2%, 1%, 0) scale(1.03);
+  }
+}
+@keyframes neonGridMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  50% {
+    background-position: 60px 30px, 30px 60px, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+}
+@keyframes starsDrift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -300px);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -129,8 +240,9 @@ a {
     transform: translate3d(0, -2px, 0);
   }
 }
+/* #endregion */
 
-/* Anim helpers */
+/* #region ANIM HELPERS — Yardımcı Sınıflar */
 .fade-in {
   animation: fadeIn 0.8s ease-out;
 }
@@ -153,7 +265,6 @@ a {
   display: inline-block;
 }
 
-/* Scroll reveal */
 .section-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -163,17 +274,19 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+/* #endregion */
 
-/* #endregion RESET — Varsayılan Sıfırlama ve Gövde */
-/* #region NAV — Üst Çubuk / Logo / Menü */
-/* Nav */
+/* =========================================================
+   NAV — Üst Çubuk / Logo / Menü
+   ========================================================= */
 .nav {
   position: sticky;
   top: 0;
+  z-index: 100;
   backdrop-filter: blur(12px) saturate(120%);
   background: rgba(11, 18, 32, 0.8);
   border-bottom: 1px solid var(--line);
-  z-index: 100;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .nav-inner {
@@ -184,24 +297,6 @@ a {
   justify-content: space-between;
   padding: 14px 16px;
 }
-
-/* eskiden: .logo svg{height:28px;width:28px} */
-.logo svg,
-.logo img {
-  height: 50px;
-  width: 50px;
-  display: block;
-}
-.logo:hover {
-  transform: scale(1.05);
-  animation: bounce 0.6s ease-in-out;
-}
-.logo img {
-  transition: transform 0.3s ease;
-}
-.logo:hover img {
-  transform: rotate(10deg) scale(1.1);
-}
 .logo {
   display: inline-flex;
   align-items: center;
@@ -211,10 +306,18 @@ a {
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
+.logo img,
 .logo svg {
+  width: 50px;
+  height: 50px;
+  display: block;
   transition: transform 0.3s ease;
 }
+.logo:hover {
+  transform: scale(1.05);
+  animation: bounce 0.6s ease-in-out;
+}
+.logo:hover img,
 .logo:hover svg {
   transform: rotate(10deg) scale(1.1);
 }
@@ -238,13 +341,14 @@ a {
   background: linear-gradient(90deg, var(--c1), var(--c2));
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.nav-links a:hover::after {
-  width: 100%;
-}
 .nav-links a:hover {
   color: #fff;
   transform: translateY(-2px);
 }
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .cta {
   display: none;
   background: linear-gradient(135deg, var(--c1), var(--c2));
@@ -253,9 +357,9 @@ a {
   padding: 10px 18px;
   border-radius: 9999px;
   box-shadow: var(--shadow);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .cta::before {
   content: "";
@@ -272,13 +376,14 @@ a {
   );
   transition: left 0.6s ease;
 }
-.cta:hover::before {
-  left: 100%;
-}
 .cta:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 40px rgba(34, 211, 238, 0.4);
 }
+.cta:hover::before {
+  left: 100%;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
@@ -288,24 +393,63 @@ a {
   }
 }
 
-/* HERO — blok tam merkezde */
+/* =========================================================
+   HERO — Üst-Orta Yerleşim
+   ========================================================= */
 .hero {
   position: relative;
-  min-height: 50vh;
+  min-height: 52vh;
   display: flex;
-  justify-content: center; /* yatayda ortala */
-  align-items: flex-start; /* dikeyde üste yerleştir */
-  padding-top: 120px; /* navbar ile çakışmaması için boşluk */
-  padding-left: 16px;
-  padding-right: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 16px 40px;
 }
-
 .hero-inner {
   max-width: var(--max);
   width: 100%;
   text-align: center;
 }
-/* Tüm sayfayı kaplayan global blob'lar */
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.badge:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(34, 211, 238, 0.4);
+  transform: scale(1.05);
+}
+h1 {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.08;
+  margin: 16px 0;
+}
+.g {
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: glow 4s ease-in-out infinite;
+  display: inline-block;
+}
+.lead {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* =========================================================
+   GLOBAL BLOBS & PARTICLES — Opsiyonel Görsel Katmanlar
+   ========================================================= */
 .global-blob {
   position: fixed;
   width: 520px;
@@ -313,7 +457,7 @@ a {
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.25;
-  z-index: -3;
+  z-index: -1;
   animation: float 18s ease-in-out infinite;
   pointer-events: none;
 }
@@ -328,7 +472,6 @@ a {
   right: -220px;
   animation-delay: 3s;
 }
-
 .global-blob.e {
   background: radial-gradient(
     circle,
@@ -339,23 +482,13 @@ a {
   left: 65%;
   animation-delay: 6s;
 }
-.socials .social-icon img,
-.social-icon img {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0) invert(1);
-  transition: all 0.4s ease;
-  position: relative;
-  z-index: 1;
-}
 
-/* Partikül katmanı: tüm sayfaya sabit */
 .particles {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
 }
 .particle {
@@ -398,272 +531,24 @@ a {
   animation-duration: 11s;
 }
 
-/* Hero içi tipografi */
-.badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  border-radius: 9999px;
-  padding: 8px 16px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
-}
-.badge:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(34, 211, 238, 0.4);
-  transform: scale(1.05);
-}
-h1 {
-  font-size: 42px;
-  font-weight: 800;
-  margin: 0 0 20px;
-  line-height: 1.1;
-}
-.g {
-  background: linear-gradient(135deg, var(--c1), var(--c2));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% 200%;
-  animation: glow 4s ease-in-out infinite;
-  display: inline-block;
-}
-.lead {
-  max-width: 760px;
-  margin: 0 auto 36px;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-
-/* Sosyal ikonlar (hero) */
-.socials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.socials .social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  color: var(--muted);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(15px);
-}
-.socials .social-icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: linear-gradient(135deg, var(--c1), var(--c2));
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  z-index: -1;
-}
-.socials .social-icon:hover::before {
-  width: 120%;
-  height: 120%;
-}
-.socials .social-icon:hover {
-  transform: translateY(-5px) scale(1.15);
-  border-color: rgba(34, 211, 238, 0.6);
-  color: #fff;
-  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.4);
-}
-.socials .social-icon svg {
-  width: 22px;
-  height: 22px;
-  transition: all 0.4s ease;
-  position: relative;
-  z-index: 1;
-}
-.socials .social-icon:hover svg {
-  transform: scale(1.2) rotate(5deg);
-}
-
-/* Genel sosyal ikon (kart içi) */
-.social-icons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-top: 8px;
-}
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: var(--muted);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-.social-icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: linear-gradient(135deg, var(--c1), var(--c2));
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  z-index: -1;
-}
-.social-icon:hover::before {
-  width: 100%;
-  height: 100%;
-}
-.social-icon:hover {
-  transform: translateY(-3px) scale(1.1);
-  border-color: rgba(34, 211, 238, 0.4);
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
-}
-.social-icon svg {
-  width: 18px;
-  height: 18px;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-/* Bölümler */
-section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 80px 16px;
-}
-.kicker {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--c1);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 20px;
-  line-height: 1.2;
-}
-h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 8px 0;
-  line-height: 1.3;
-}
-.sub {
-  color: var(--muted);
-  max-width: 760px;
-  margin-bottom: 40px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Grid */
-.grid {
-  display: grid;
-  gap: 20px;
-}
-@media (min-width: 768px) {
-  .grid.cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .grid.cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Kartlar */
-.card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transition: left 0.6s ease;
-}
-.card-hover:hover::before {
-  left: 100%;
-}
-.card-hover:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  border-color: rgba(34, 211, 238, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-}
-.project-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-.card p {
-  color: #cbd5e1;
-  font-size: 14px;
-  margin: 12px 0;
-  line-height: 1.5;
-}
-
-/* Butonlar */
+/* =========================================================
+   BUTTONS — Parlama + Pulse
+   ========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
-  padding: 12px 24px;
-  border: 1px solid var(--line);
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
   border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid var(--line);
   background: #fff;
   color: #0f172a;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
-  font-size: 14px;
 }
 .btn::before {
   content: "";
@@ -702,27 +587,178 @@ h3 {
   animation: pulse 0.6s ease-in-out;
 }
 
-/* Etiketler */
-.tag {
-  display: inline-block;
-  border: 1px solid var(--line);
-  background: rgba(11, 18, 32, 0.8);
-  color: #cbd5e1;
-  border-radius: 9999px;
-  font-size: 11px;
-  padding: 6px 12px;
-  margin: 6px 6px 0 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(5px);
+/* =========================================================
+   GRID & SECTIONS
+   ========================================================= */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px 16px;
 }
-.tag:hover {
-  background: rgba(34, 211, 238, 0.15);
-  border-color: rgba(34, 211, 238, 0.4);
-  transform: scale(1.05) translateY(-1px);
-  color: #fff;
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--c1);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0;
+  line-height: 1.3;
+}
+.sub {
+  color: var(--muted);
+  max-width: 760px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Utils */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   CARD — Cam + Hover Shine
+   ========================================================= */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+.card-hover:hover::before {
+  left: 100%;
+}
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SOCIAL ICONS — Halka Parıltı
+   ========================================================= */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.socials .social-icon,
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.socials .social-icon {
+  width: 44px;
+  height: 44px;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+}
+.socials .social-icon::before,
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: -1;
+}
+.socials .social-icon:hover::before {
+  width: 120%;
+  height: 120%;
+}
+.social-icon:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.socials .social-icon:hover,
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.15);
+  border-color: rgba(34, 211, 238, 0.6);
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.4);
+}
+.socials .social-icon svg,
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+.socials .social-icon:hover svg,
+.social-icon:hover svg {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* =========================================================
+   UTILS
+   ========================================================= */
 .spacer {
   height: 12px;
 }
@@ -752,12 +788,12 @@ h3 {
   background: var(--c1);
   transition: width 0.3s ease;
 }
-.link:hover::after {
-  width: 100%;
-}
 .link:hover {
   color: #fff;
   transform: translateX(3px);
+}
+.link:hover::after {
+  width: 100%;
 }
 .dot {
   width: 24px;
@@ -765,8 +801,8 @@ h3 {
   background: linear-gradient(135deg, var(--c1), var(--c2));
   border-radius: 8px;
   flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .dot::after {
   content: "";
@@ -786,9 +822,9 @@ h3 {
   animation: pulse 1s ease-in-out infinite;
 }
 
-/* #endregion NAV — Üst Çubuk / Logo / Menü */
-/* #region FOOTER — Alt Bilgi */
-/* Footer */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
   border-top: 1px solid var(--line);
   background: linear-gradient(135deg, #0a0f1d 0%, #0b1220 100%);
@@ -819,18 +855,14 @@ footer {
   border-top: 1px solid var(--line);
 }
 
-/* #endregion FOOTER — Alt Bilgi */
-/* #region ACCESSIBILITY — Klavye Odak Göstergeleri */
-/* Focus */
+/* =========================================================
+   ACCESSIBILITY & REDUCED MOTION
+   ========================================================= */
 a:focus {
   outline: 2px solid var(--c1);
   outline-offset: 2px;
   border-radius: 4px;
 }
-
-/* #endregion ACCESSIBILITY — Klavye Odak Göstergeleri */
-/* #region A11Y — Azaltılmış Hareket Tercihi */
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -841,9 +873,9 @@ a:focus {
   }
 }
 
-/* #endregion A11Y — Azaltılmış Hareket Tercihi */
-/* #region RESPONSIVE — Mobil Uyarlamalar */
-/* Mobile tweaks */
+/* =========================================================
+   RESPONSIVE — Mobil
+   ========================================================= */
 @media (max-width: 767px) {
   .hero-inner {
     padding: 60px 16px;
@@ -864,5 +896,3 @@ a:focus {
     justify-content: center;
   }
 }
-
-/* #endregion RESPONSIVE — Mobil Uyarlamalar */
