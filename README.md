@@ -37,4 +37,5 @@ ViperaDev, bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üretic
 
 ---
 
-\*\*ViperaDev — Enter'a
+**ViperaDev — Enter'a
+
