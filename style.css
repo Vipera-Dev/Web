@@ -896,3 +896,149 @@ a:focus {
     justify-content: center;
   }
 }
+
+/* --- Fixes: tag layout & social icons --- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  background: rgba(34, 211, 238, 0.1);
+  color: #cfe3ff;
+  margin: 0; /* gap ile yönetilecek */
+  font-weight: 700;
+}
+.tag:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.08) inset;
+}
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.social-icon:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Extra fixes for tags, social icons, typing cursor --- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  background: rgba(34, 211, 238, 0.1);
+  color: #cfe3ff;
+  font-weight: 600;
+}
+.tag:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.08) inset;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.social-icon:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6f0ff;
+}
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  margin: 14px auto 0;
+  width: 500px;
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--c1),
+    var(--c2),
+    transparent
+  );
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5));
+  animation: underlinePulse 3.2s ease-in-out infinite;
+}
+@keyframes underlinePulse {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.12);
+  }
+}
+
+.role-sub {
+  color: var(--muted);
+  font-weight: 600;
+}
