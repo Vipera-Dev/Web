@@ -682,20 +682,24 @@ h3 {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 6px 8px; /* dikey = 6px, yatay = 8px */
+  margin-top: 6px; /* üstteki içerikten az boşluk */
 }
+
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 4px 10px; /* daha kompakt iç boşluk */
   font-size: 12px;
   border-radius: 9999px;
   border: 1px solid rgba(34, 211, 238, 0.25);
-  background: rgba(34, 211, 238, 0.1);
+  background: rgba(34, 211, 238, 0.05);
   color: #cfe3ff;
   font-weight: 600;
+  line-height: 1; /* satır yüksekliği tam oturur */
+  margin: 0; /* ekstra margin kaldırıldı */
 }
+
 .tag:hover {
   border-color: rgba(34, 211, 238, 0.45);
   box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.08) inset;
@@ -1091,24 +1095,46 @@ h1::after {
 }
 
 /* PAYLAŞ BUTONU */
+
 .share-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 2;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 28px; /* eskiden 36px */
+  height: 28px; /* eskiden 36px */
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  font-size: 18px;
+  font-size: 16px; /* küçültülmüş içerik boyutu */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
+
+/* PAYLAŞ MENÜSÜ */
+.share-menu {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  z-index: 5;
+  min-width: 170px; /* Eskiden 220px idi */
+  max-width: 200px; /* taşmayı önlemek için üst sınır */
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  display: none;
+  backdrop-filter: blur(12px);
+}
+.share-menu.open {
+  display: block;
+}
+
 .share-btn:hover {
   transform: translateY(-2px) scale(1.05);
   border-color: rgba(34, 211, 238, 0.5);
