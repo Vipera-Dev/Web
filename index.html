@@ -138,60 +138,77 @@
             </div>
         </section>
 
-        <!-- Projeler -->
-        <section id="projeler" class="section-animate">
+        <!-- PROJELER -->
+        <section class="section-animate" id="projeler">
             <div class="kicker">Üretimler</div>
             <h2>Projeler</h2>
             <p class="sub">Prototiplerden ürünleşen araçlara: güncel çalışmaların kısa listesi.</p>
 
-            <div class="grid cols-3">
-                <!-- Mission: Budy -->
-                <div class="card card-hover project-card" id="mission-budy">
+            <!-- FİLTRE KONTROLLERİ -->
+            <div class="filter-bar" role="tablist" aria-label="Proje kategorileri">
+                <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Tümü</button>
+                <button class="filter-btn" data-filter="game" role="tab" aria-selected="false">Oyunlar</button>
+                <button class="filter-btn" data-filter="tool" role="tab" aria-selected="false">Araçlar</button>
+            </div>
+
+            <div class="grid cols-3 project-grid">
+                <!-- Mission: Budy (OYUN) -->
+                <article class="card card-hover project-card" data-category="game" id="mission-budy"
+                    data-share-url="https://viperadev.com/mission-budy.html"
+                    data-github-url="https://github.com/ViperaDev/MissionBudy"
+                    data-image-url="media/mission-budy/cover.webp">
+                    <!-- PAYLAŞ BUTONU -->
+                    <button class="share-btn" aria-label="Paylaş" aria-haspopup="menu" aria-expanded="false">⋯</button>
+
+                    <div class="preview">
+                        <img loading="lazy" src="media/mission-budy/cover.webp" alt="Mission: Budy önizleme" />
+                    </div>
                     <div class="row">
                         <h3>Mission: Budy</h3>
                         <span class="ml-auto muted">Oyun (2D/3D)</span>
                     </div>
-                    <p>Topluluk odaklı aksiyon/RPG öğeleriyle; mobil ve PC hedefli prototip. Görev, keşif ve öğrenmeyi
-                        harmanlar.</p>
+                    <p>Topluluk odaklı aksiyon/RPG öğeleriyle; mobil ve PC hedefli prototip…</p>
                     <div class="spacer"></div>
                     <div>
-                        <span class="tag">Unreal</span>
-                        <span class="tag">Unity</span>
-                        <span class="tag">Prototip</span>
-                        <span class="tag">Aksiyon</span>
-                        <span class="tag">RPG</span>
+                        <span class="tag">Unreal</span><span class="tag">Unity</span><span class="tag">Prototip</span>
+                        <span class="tag">Aksiyon</span><span class="tag">RPG</span>
                     </div>
                     <div class="spacer"></div>
                     <div class="row">
-                        <a href="mission-budy.html" class="btn">Detaylar</a>
-                        <a href="https://github.com/ViperaDev/MissionBudy" class="btn secondary" target="_blank"
+                        <a class="btn" href="/pages/Games/mission-budy.html">Detaylar</a>
+                        <a class="btn secondary" href="https://github.com/ViperaDev/MissionBudy" target="_blank"
                             rel="noopener">GitHub</a>
                     </div>
-                </div>
+                </article>
 
 
-                <!-- VipoDeck -->
-                <div class="card card-hover project-card" id="vipodeck">
+
+                <!-- VipoDeck (ARAÇ) -->
+                <article class="card card-hover project-card" data-category="tool" id="vipodeck"
+                    data-share-url="https://viperadev.com/vipodeck.html"
+                    data-github-url="https://github.com/ViperaDev/VipoDeck" data-image-url="media/vipodeck/cover.webp">
+                    <button class="share-btn" aria-label="Paylaş" aria-haspopup="menu" aria-expanded="false">⋯</button>
+
+                    <div class="preview">
+                        <img loading="lazy" src="media/vipodeck/cover.webp" alt="VipoDeck önizleme" />
+                    </div>
                     <div class="row">
                         <h3>VipoDeck</h3>
                         <span class="ml-auto muted">Masaüstü Süper Uygulama</span>
                     </div>
-                    <p>Kişisel üretkenlik paneli: kısayollar, profil yönetimi, kart sistemi ve global kısayollar.
-                        Geliştiriciler için esnek.</p>
+                    <p>Kart tabanlı üretkenlik: profiller, JSON yapılandırma, global kısayol…</p>
                     <div class="spacer"></div>
                     <div>
-                        <span class="tag">Python</span>
-                        <span class="tag">PyQt5</span>
-                        <span class="tag">Productivity</span>
-                        <span class="tag">Super App</span>
+                        <span class="tag">Python</span><span class="tag">PyQt5</span>
+                        <span class="tag">Productivity</span><span class="tag">Super App</span>
                     </div>
                     <div class="spacer"></div>
                     <div class="row">
-                        <a href="vipodeck.html" class="btn">Detaylar</a>
-                        <a href="https://github.com/ViperaDev/VipoDeck" class="btn secondary" target="_blank"
+                        <a class="btn" href="/pages/Apps/viperadeck.html">Detaylar</a>
+                        <a class="btn secondary" href="https://github.com/ViperaDev/VipoDeck" target="_blank"
                             rel="noopener">GitHub</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 

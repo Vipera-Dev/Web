@@ -986,3 +986,199 @@ h1::after {
 .feature-list li {
   margin: 6px 0;
 }
+
+/* FİLTRE ÇUBUĞU */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 18px 0;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+.filter-btn.is-active {
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  color: #0f172a;
+  box-shadow: var(--shadow);
+  border-color: transparent;
+}
+
+/* PROJE KARTI ÖNİZLEME (hover’da görünür) */
+.project-card {
+  overflow: hidden;
+}
+.project-card .preview {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: -6px -6px 12px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+}
+.project-card .preview img,
+.project-card .preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.35s ease, transform 0.5s ease;
+}
+.project-card:hover .preview img,
+.project-card:hover .preview video {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Küçük ekran yüksekliği */
+@media (max-width: 767px) {
+  .project-card .preview {
+    height: 140px;
+  }
+}
+
+/* Changelog / Timeline */
+.changelog {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
+}
+.changelog li {
+  position: relative;
+  padding: 10px 0 10px 16px;
+}
+.changelog li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+}
+.changelog time {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.changelog strong {
+  display: block;
+  font-weight: 700;
+}
+.changelog p {
+  margin: 4px 0 0;
+  color: #cbd5e1;
+}
+
+/* PAYLAŞ BUTONU */
+.share-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.share-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(34, 211, 238, 0.5);
+}
+.share-btn:focus {
+  outline: 2px solid var(--c1);
+  outline-offset: 2px;
+}
+
+/* PAYLAŞ MENÜSÜ */
+.share-menu {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  z-index: 5;
+  min-width: 220px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  display: none;
+  backdrop-filter: blur(12px);
+}
+.share-menu.open {
+  display: block;
+}
+.share-menu button,
+.share-menu a {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  cursor: pointer;
+}
+.share-menu button:hover,
+.share-menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.share-menu .muted {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(15, 23, 42, 0.96);
+  color: #e5e7eb;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 3000;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
