@@ -14,7 +14,18 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://viperadev.com/mission-budy.html" />
     <meta property="og:image" content="https://viperadev.com/og-image.jpg" />
-    <link rel="stylesheet" href="/style.css" />
+
+
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/share-toast.css">
+    <link rel="stylesheet" href="/assets/css/pages-page-hero.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+
 </head>
 
 <body>
@@ -24,7 +35,7 @@
     <header class="nav">
         <div class="nav-inner">
             <a class="logo" href="/index.html" aria-label="ViperaDev ana sayfa">
-                <img src="/icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
+                <img src="/assets/icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
                 <span>ViperaDev</span>
             </a>
             <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menüyü aç/kapat">
@@ -36,7 +47,7 @@
                 <a href="/index.html#projeler">Projeler</a>
                 <a href="/index.html#araclar">Araçlar</a>
                 <a href="/index.html#takim">Takım</a>
-                <a class="cta" href="/index.html#iletisim">İletişim</a>
+                <a href="/index.html#iletisim">İletişim</a>
             </nav>
         </div>
     </header>
@@ -146,7 +157,8 @@
         <div class="footer-inner">
             <div>
                 <a class="logo" href="/index.html">
-                    <img src="/icons/logo.svg" width="50" height="50" alt="ViperaDev logo" /><span>ViperaDev</span>
+                    <img src="/assets/icons/logo.svg" width="50" height="50"
+                        alt="ViperaDev logo" /><span>ViperaDev</span>
                 </a>
                 <div class="spacer"></div>
                 <p class="muted">Öğrenme + eğlence kesişiminde, toplulukla büyür.</p>
@@ -155,23 +167,31 @@
                 <h4 class="h4">Kısa Linkler</h4>
                 <div class="spacer"></div>
                 <nav>
-                    <a class="link" href="/index.html#projeler">Projeler</a><br />
-                    <a class="link" href="/index.html#takim">Takım</a><br />
-                    <a class="link" href="/index.html#iletisim">İletişim</a>
+                    <a class="link" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Ana
+                        Sayfa</a><br />
+                    <a class="link" href="#hakkinda">Hakkında</a><br />
+                    <a class="link" href="#projeler">Projeler</a><br />
+                    <a class="link" href="#araclar">Araçlar</a><br />
+                    <a class="link" href="#takim">Takım</a><br />
+                    <a class="link" href="#iletisim">İletişim</a>
                 </nav>
             </div>
             <div>
                 <h4 class="h4">Hızlı İletişim</h4>
                 <div class="spacer"></div>
                 <div>
-                    <a class="link" href="mailto:viperadev@gmail.com">viperadev@gmail.com</a>
+                    <a class="link" href="mailto:viperadev@gmail.com">E-Mail</a><br />
+                    <a class="link" href="https://github.com/yavuzselimyigit">GitHub</a><br />
+                    <a class="link" href="https://www.linkedin.com/company/vipera-dev/">LinkedIn</a><br />
+                    <a class="link" href="https://t.me/viperadev" target="_blank" rel="noopener">Telegram</a>
                 </div>
             </div>
         </div>
         <div class="copyright">© 2025 ViperaDev</div>
     </footer>
 
-    <script src="/app.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
+
 </body>
 
 </html>

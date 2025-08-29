@@ -1,0 +1,32 @@
+/* Small screens */
+@media (max-width: 767px) {
+  .hero-inner {
+    padding: 60px 16px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .lead {
+    font-size: 16px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  .project-card .preview {
+    height: 140px;
+  }
+  .post-card .post-cover {
+    height: 140px;
+  }
+  .badge-chip {
+    height: 24px;
+    font-size: 11px;
+    padding: 0 8px;
+  }
+}

@@ -1,0 +1,93 @@
+/* PAYLAŞ BUTONU */
+.share-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.share-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(34, 211, 238, 0.5);
+}
+.share-btn:focus {
+  outline: 2px solid var(--c1);
+  outline-offset: 2px;
+}
+
+/* PAYLAŞ MENÜSÜ */
+.share-menu {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  z-index: 5;
+  min-width: 190px;
+  max-width: 220px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  display: none;
+  backdrop-filter: blur(12px);
+}
+.share-menu.open {
+  display: block;
+}
+.share-menu button,
+.share-menu a {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  cursor: pointer;
+}
+.share-menu button:hover,
+.share-menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.share-menu .muted {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(15, 23, 42, 0.96);
+  color: #e5e7eb;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 3000;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
