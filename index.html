@@ -1,177 +1,117 @@
 <!DOCTYPE html>
-
 <html lang="tr">
-<!-- #region HEAD — Meta / SEO / Stil Bağlantıları -->
 
 <head>
-    <!-- #region META — Temel meta etiketleri (charset, viewport, description, theme-color) -->
-    <!-- Meta etiketleri ve sayfa başlığı - Temel HTML meta bilgileri -->
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViperaDev — Enter'a bas. Efsane başlasın.</title>
-    <meta content="ViperaDev: 2D/3D oyunlar ve oyun geliştirme araçları. Öğrenme ile eğlenceyi birleştirir."
-        name="description" />
-    <!-- #endregion META -->
-    <meta content="#0f172a" name="theme-color" />
+    <meta name="description"
+        content="ViperaDev: 2D/3D oyunlar ve oyun geliştirme araçları. Öğrenme ile eğlenceyi birleştirir." />
+    <meta name="theme-color" content="#0f172a" />
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="ViperaDev — Enter'a bas. Efsane başlasın." />
+    <meta property="og:description"
+        content="ViperaDev: 2D/3D oyunlar ve oyun geliştirme araçları. Öğrenme ile eğlenceyi birleştirir." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://viperadev.com" />
+    <meta property="og:image" content="https://viperadev.com/og-image.jpg" />
 
-
-    <!-- #region OPEN GRAPH — Sosyal medya paylaşım etiketleri -->
-
-    <!-- Sosyal medya paylaşım etiketleri - Open Graph meta verileri -->
-    <meta content="ViperaDev — Enter'a bas. Efsane başlasın." property="og:title" />
-
-    <meta content="ViperaDev: 2D/3D oyunlar ve oyun geliştirme araçları. Öğrenme ile eğlenceyi birleştirir."
-        property="og:description" />
-
-    <meta content="website" property="og:type" />
-
-    <meta content="https://viperadev.com" property="og:url" />
-
-    <meta content="https://viperadev.com/og-image.jpg" property="og:image" />
-    <!-- CSS dosyası bağlantısı -->
-    <!-- #endregion OPEN GRAPH — Sosyal medya paylaşım etiketleri -->
-
-
-
-    <!-- #region STYLESHEET — Harici CSS dosyası bağlama -->
-    <link href="style.css" rel="stylesheet" />
-    <!-- #endregion STYLESHEET -->
-
-
-
+    <link rel="stylesheet" href="style.css" />
 </head>
-<!-- #endregion HEAD — Meta / SEO / Stil Bağlantıları -->
 
 <body>
+    <!-- Skip to content -->
+    <a class="skip-link" href="#ana-icerik">İçeriğe atla</a>
 
+    <!-- Global blobs -->
+    <div class="global-blob c" aria-hidden="true"></div>
+    <div class="global-blob d" aria-hidden="true"></div>
+    <div class="global-blob e" aria-hidden="true"></div>
 
-    <!-- Global animasyonlu arka plan blob'ları - Tüm sayfa için yüzen gradient şekiller -->
-    <div class="global-blob c"></div>
-    <div class="global-blob d"></div>
-    <div class="global-blob e"></div>
-
-
-    <!-- Üst navigasyon menüsü - Sabit pozisyonlu header -->
-
-    <!-- #region HEADER — Navigasyon / Logo / Menü -->
+    <!-- HEADER -->
     <header class="nav">
         <div class="nav-inner">
+            <a class="logo" href="#" aria-label="ViperaDev ana sayfa"
+                onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                <img class="logo-img" src="icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
+                <span>ViperaDev</span>
+            </a>
 
+            <!-- Hamburger -->
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menüyü aç/kapat">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
 
-
-            <!-- Logo ve marka adı - SVG logo ile birlikte -->
-            <div class="logo">
-
-                <img alt="ViperaDev logo" class="logo-img" height="28" src="icons/logo.svg" width="28" />
-                <span onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="cursor:pointer;">ViperaDev</span>
-
-            </div>
-
-
-
-            <!-- Ana navigasyon linkleri - Masaüstü menü -->
-            <nav class="nav-links">
-
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Ana Sayfa</a>
+            <!-- Ana menü -->
+            <nav id="nav-menu" class="nav-links" aria-label="Birincil">
+                <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Ana Sayfa</a>
                 <a href="#hakkinda">Hakkında</a>
                 <a href="#projeler">Projeler</a>
                 <a href="#araclar">Araçlar</a>
                 <a href="#takim">Takım</a>
-
+                <a class="cta" href="#iletisim">İletişim</a>
             </nav>
-
-
-
-            <!-- İletişim butonu - Call-to-action -->
-            <a class="cta" href="#iletisim">İletişim</a>
         </div>
     </header>
-    <!-- #endregion HEADER — Navigasyon / Logo / Menü -->
 
-
-
-    <main>
-        <div class="particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-
-
-
-        <!-- #region HERO — Açılış Alanı / Slogan / CTA -->
+    <main id="ana-icerik">
+        <!-- HERO -->
         <section class="hero">
-            <!-- Animasyonlu arka plan blob'ları - Dekoratif gradient şekiller -->
-            <div class="blob a"></div>
-            <div class="blob b"></div>
-            <!-- Animasyonlu partiküller - Yüzen nokta efektleri -->
-            <div class="particles">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
             <div class="hero-inner">
-                <!-- Stüdyo tanıtım rozeti - Küçük bilgi etiketi -->
                 <div class="badge fade-in">Bağımsız oyun stüdyosu &amp; araç geliştirici</div>
-                <!-- Ana başlık - Typing animasyonlu slogan -->
-                <h1 class="slide-up"><span class="typing-text" data-text="Enter'a bas. Efsane başlasın.">Enter'a bas.
-                        Efsane başlasın.</span></h1>
-                <!-- Alt başlık açıklaması - Stüdyo tanımı -->
-                <p class="lead slide-up-delay">ViperaDev; 2D ve 3D oyunlarda <strong>öğretici</strong> ve
-                    <strong>eğlenceli</strong> deneyimler üretir. Oyunlar ve oyun geliştirme araçları geliştirir.
+                <h1 class="slide-up">
+                    <span class="typing-text" data-text="Enter'a bas. Efsane başlasın.">Enter'a bas. Efsane
+                        başlasın.</span>
+                </h1>
+                <p class="lead slide-up-delay">
+                    ViperaDev; 2D ve 3D oyunlarda <strong>öğretici</strong> ve <strong>eğlenceli</strong> deneyimler
+                    üretir. Oyunlar ve oyun geliştirme araçları geliştirir.
                 </p>
-                <!-- Ana aksiyon butonları - Birincil navigasyon -->
                 <div class="hero-actions slide-up-delay-2">
                     <a class="btn pulse-hover" href="#projeler">Projeleri Gör</a>
                     <a class="btn secondary" href="#hakkinda">Stüdyo Hakkında</a>
                 </div>
-                <br>
-
-                <!-- Sosyal medya linkleri - Dış bağlantılar -->
-                <div class="socials fade-in-delay">
-                    <a class="social-icon" href="https://github.com/Vipera-Dev" rel="noopener noreferrer"
-                        target="_blank" title="GitHub">
-                        <img alt="GitHub" height="24" src="icons/github.svg" width="24" />
+                <br />
+                <div class="socials fade-in-delay" aria-label="Sosyal bağlantılar">
+                    <a class="social-icon" href="https://github.com/Vipera-Dev" target="_blank"
+                        rel="noopener noreferrer" title="GitHub">
+                        <img src="icons/github.svg" width="24" height="24" alt="GitHub" />
                     </a>
-                    <a class="social-icon" href="https://www.linkedin.com/company/vipera-dev/" rel="noopener noreferrer"
-                        target="_blank" title="LinkedIn">
-                        <img alt="LinkedIn" height="24" src="icons/linkedin.svg" width="24" />
+                    <a class="social-icon" href="https://www.linkedin.com/company/vipera-dev/" target="_blank"
+                        rel="noopener noreferrer" title="LinkedIn">
+                        <img src="icons/linkedin.svg" width="24" height="24" alt="LinkedIn" />
                     </a>
-                    <a class="social-icon" href="https://www.instagram.com/viperadev/" rel="noopener noreferrer"
-                        target="_blank" title="Instagram">
-                        <img alt="Instagram" height="24" src="icons/instagram.svg" width="24" />
+                    <a class="social-icon" href="https://www.instagram.com/viperadev/" target="_blank"
+                        rel="noopener noreferrer" title="Instagram">
+                        <img src="icons/instagram.svg" width="24" height="24" alt="Instagram" />
                     </a>
-                    <a class="social-icon" href="https://www.youtube.com/@viperadev" rel="noopener noreferrer"
-                        target="_blank" title="YouTube">
-                        <img alt="YouTube" height="24" src="icons/youtube.svg" width="24" />
+                    <a class="social-icon" href="https://www.youtube.com/@viperadev" target="_blank"
+                        rel="noopener noreferrer" title="YouTube">
+                        <img src="icons/youtube.svg" width="24" height="24" alt="YouTube" />
                     </a>
-                    <a class="social-icon" href="https://x.com/viperadev" rel="noopener noreferrer" target="_blank"
+                    <a class="social-icon" href="https://x.com/viperadev" target="_blank" rel="noopener noreferrer"
                         title="X">
-                        <img alt="X" height="24" src="icons/x.svg" width="24" />
+                        <img src="icons/x.svg" width="24" height="24" alt="X" />
                     </a>
-                    <a class="social-icon" href="http://viperadev.itch.io/" rel="noopener noreferrer" target="_blank"
+                    <a class="social-icon" href="http://viperadev.itch.io/" target="_blank" rel="noopener noreferrer"
                         title="itch.io">
-                        <img alt="itch.io" height="24" src="icons/itchio.svg" width="24" />
+                        <img src="icons/itchio.svg" width="24" height="24" alt="itch.io" />
                     </a>
                 </div>
             </div>
         </section>
-        <!-- #endregion HERO — Açılış Alanı / Slogan / CTA -->
 
-
-
-        <!-- #region Hakkında bölümü - Stüdyo tanıtımı -->
-        <section class="section-animate" id="hakkinda">
+        <!-- Hakkında -->
+        <section id="hakkinda" class="section-animate">
             <div class="kicker">Stüdyo</div>
             <h2>ViperaDev nedir?</h2>
-            <p class="sub">Bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üreticisiyiz. Amaç: 2D ve 3D oyunlarda
-                öğrenme ile eğlenceyi birleştirip, sürdürülebilir bir üretim hattı kurmak.</p>
-            <!-- Misyon, vizyon ve değerler kartları - Üç sütunlu grid -->
+            <p class="sub">
+                Bağımsız bir oyun stüdyosu ve oyun geliştirme araçları üreticisiyiz. Amaç: 2D ve 3D oyunlarda öğrenme
+                ile eğlenceyi birleştirip, sürdürülebilir bir üretim hattı kurmak.
+            </p>
             <div class="grid cols-3">
                 <div class="card card-hover">
                     <div class="row">
@@ -196,17 +136,15 @@
                 </div>
             </div>
         </section>
-        <!-- #endregion Hakkında bölümü - Stüdyo tanıtımı -->
 
-
-
-        <!-- #region PROJELER — Aktif Çalışmalar -->
-        <section class="section-animate" id="projeler">
+        <!-- Projeler -->
+        <section id="projeler" class="section-animate">
             <div class="kicker">Üretimler</div>
             <h2>Projeler</h2>
             <p class="sub">Prototiplerden ürünleşen araçlara: güncel çalışmaların kısa listesi.</p>
-            <!-- Proje kartları - Detaylı proje bilgileri -->
+
             <div class="grid cols-3">
+                <!-- Mission: Budy -->
                 <div class="card card-hover project-card" id="mission-budy">
                     <div class="row">
                         <h3>Mission: Budy</h3>
@@ -215,7 +153,6 @@
                     <p>Topluluk odaklı aksiyon/RPG öğeleriyle; mobil ve PC hedefli prototip. Görev, keşif ve öğrenmeyi
                         harmanlar.</p>
                     <div class="spacer"></div>
-                    <!-- Teknoloji etiketleri - Kullanılan araçlar -->
                     <div>
                         <span class="tag">Unreal</span>
                         <span class="tag">Unity</span>
@@ -224,8 +161,14 @@
                         <span class="tag">RPG</span>
                     </div>
                     <div class="spacer"></div>
-                    <a class="link" href="#">Bağlantı yakında</a>
+                    <div class="row">
+                        <a href="#" class="btn open-modal" data-target="#modal-mb">Detaylar</a>
+                        <a href="https://github.com/ViperaDev/MissionBudy" class="btn secondary" target="_blank"
+                            rel="noopener">GitHub</a>
+                    </div>
                 </div>
+
+                <!-- VipoDeck -->
                 <div class="card card-hover project-card" id="vipodeck">
                     <div class="row">
                         <h3>VipoDeck</h3>
@@ -241,20 +184,20 @@
                         <span class="tag">Super App</span>
                     </div>
                     <div class="spacer"></div>
-                    <a class="link" href="#">Repo yakında</a>
+                    <div class="row">
+                        <a href="#" class="btn open-modal" data-target="#modal-vd">Detaylar</a>
+                        <a href="https://github.com/ViperaDev/VipoDeck" class="btn secondary" target="_blank"
+                            rel="noopener">GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- #endregion PROJELER — Aktif Çalışmalar -->
 
-
-
-        <!-- #region Araçlar bölümü - Geliştirme araçları -->
-        <section class="section-animate" id="araclar">
+        <!-- Araçlar -->
+        <section id="araclar" class="section-animate">
             <div class="kicker">Geliştirme Süreci</div>
             <h2>Araçlar ve Süreç</h2>
             <p class="sub">Oyun geliştirme için pratik araçlar, şablonlar ve iş akışları.</p>
-            <!-- Araç kartları - İki sütunlu düzen -->
             <div class="grid cols-2">
                 <div class="card card-hover">
                     <h3>ViperaDev Tooling</h3>
@@ -271,191 +214,78 @@
                 </div>
             </div>
         </section>
-        <!-- #endregion ARAÇLAR — Tooling ve Süreç -->
 
-
-
-        <!-- #region Takım bölümü - Ekip hakkında bilgiler -->
-        <section class="section-animate" id="takim">
+        <!-- Takım -->
+        <section id="takim" class="section-animate">
             <div class="kicker">Ekip</div>
             <h2>Takım Rolleri</h2>
             <p class="sub">Roller ve sorumluluklar net: üretim hattı uyumu ve hızlı iterasyon.</p>
 
-            <!-- Takım üyesi kartları - Üç sütunlu grid -->
             <div class="grid cols-2">
-
-                <!-- #region Yavuz Selim Yiğit-->
+                <!-- Yavuz -->
                 <div class="card card-hover section-animate">
                     <div class="row">
                         <div class="dot"></div>
                         <h3>Yavuz Selim Yiğit</h3>
                     </div>
-
-                    <p class="muted">Lider / Lead Developer</p>
+                    <p class="muted role-sub">Lider / Lead Developer</p>
                     <p>Mimari, çekirdek kod ve teknik vizyon. Unity/Unreal entegrasyonu, performans ve kalite güvencesi.
                     </p>
-
                     <div class="tags">
-
                         <span class="tag">Architecture</span>
                         <span class="tag">Core Code</span>
-                        <span class="tag">Unity</span><span class="tag">Unreal</span>
+                        <span class="tag">Unity</span>
+                        <span class="tag">Unreal</span>
                         <span class="tag">CI/CD</span>
-
                     </div>
-
                     <div class="social-icons">
-
-                        <a aria-label="Github" class="social-icon" href="https://github.com/Yavuz-Selim-Yigit"
-                            rel="noopener noreferrer" target="_blank" title="Github"><img alt="Github" height="20"
-                                src="icons/github.svg" width="20" /></a>
-
-                        <a aria-label="Linkedin" class="social-icon"
-                            href="https://www.linkedin.com/in/yavuz-selim-yigit/" rel="noopener noreferrer"
-                            target="_blank" title="Linkedin"><img alt="Linkedin" height="20" src="icons/linkedin.svg"
-                                width="20" /></a>
-
-                        <a aria-label="Itch" class="social-icon" href="https://yavuz-selim-yigit.itch.io/"
-                            rel="noopener noreferrer" target="_blank" title="Itch"><img alt="Itchio" height="20"
-                                src="icons/itchio.svg" width="20" /></a>
-
-                        <a aria-label="Medium" class="social-icon" href="https://medium.com/@yavuzselimyigit"
-                            rel="noopener noreferrer" target="_blank" title="Itch"><img alt="Itchio" height="20"
-                                src="icons/medium.svg" width="20" /></a>
+                        <a class="social-icon" aria-label="Github" href="https://github.com/Yavuz-Selim-Yigit"
+                            target="_blank" rel="noopener" title="Github">
+                            <img src="icons/github.svg" width="20" height="20" alt="Github" />
+                        </a>
+                        <a class="social-icon" aria-label="Linkedin"
+                            href="https://www.linkedin.com/in/yavuz-selim-yigit/" target="_blank" rel="noopener"
+                            title="Linkedin">
+                            <img src="icons/linkedin.svg" width="20" height="20" alt="Linkedin" />
+                        </a>
+                        <a class="social-icon" aria-label="Itch" href="https://yavuz-selim-yigit.itch.io/"
+                            target="_blank" rel="noopener" title="Itch.io">
+                            <img src="icons/itchio.svg" width="20" height="20" alt="Itch.io" />
+                        </a>
+                        <a class="social-icon" aria-label="Medium" href="https://medium.com/@yavuzselimyigit"
+                            target="_blank" rel="noopener" title="Medium">
+                            <img src="icons/medium.svg" width="20" height="20" alt="Medium" />
+                        </a>
                     </div>
                 </div>
-                <!-- #endregion Yavuz Selim Yiğit-->
 
-
-
-                <!-- #region Şerife Nazlı Ünay-->
+                <!-- Yakında kartı -->
                 <div class="card card-hover section-animate">
                     <div class="row">
                         <div class="dot"></div>
-                        <h3>Şerife Nazlı Ünay</h3>
+                        <h3>Yeni Üyeler Yakında</h3>
                     </div>
-
-                    <p class="muted">Artist (2D/3D)</p>
-
-                    <p>Aseprite ile 2D sprite/animasyon, UI varlıkları ve stil rehberi. Gerekli yerlerde teknik
-                        sanat/kod desteği.</p>
-
+                    <p class="muted">Ekip genişliyor</p>
+                    <p>İleride katılacak rol ve uzmanlıklar burada yer alacak. Başvurular ve duyurular sosyal
+                        kanallardan paylaşılacak.</p>
                     <div class="tags">
-
-                        <span class="tag">Aseprite</span>
-                        <span class="tag">2D Art</span>
-                        <span class="tag">Animation</span>
-                        <span class="tag">UI</span>
-
+                        <span class="tag">Game Design</span>
+                        <span class="tag">2D/3D Art</span>
+                        <span class="tag">QA</span>
+                        <span class="tag">Audio</span>
                     </div>
-                    <div class="social-icons">
-
-                        <a aria-label="Github" class="social-icon" href="https://github.com/NazliUnay"
-                            rel="noopener noreferrer" target="_blank" title="Github"><img alt="Github" height="20"
-                                src="icons/github.svg" width="20" /></a>
-
-                        <a aria-label="Linkedin" class="social-icon"
-                            href="https://www.linkedin.com/in/serife-nazli-unay/" rel="noopener noreferrer"
-                            target="_blank" title="Linkedin"><img alt="Linkedin" height="20" src="icons/linkedin.svg"
-                                width="20" /></a>
-
-                        <a aria-label="Medium" class="social-icon" href="https://medium.com/@nazli_unay"
-                            rel="noopener noreferrer" target="_blank" title="Itch"><img alt="Itchio" height="20"
-                                src="icons/medium.svg" width="20" /></a>
-
-                    </div>
+                    <a class="link" href="#iletisim">İletişime geç</a>
                 </div>
-                <!-- #endregion Şerife Nazlı Ünay-->
-
-
-
-                <!-- #region Gamze Polat-->
-                <div class="card card-hover section-animate">
-                    <div class="row">
-                        <div class="dot"></div>
-                        <h3>Gamze Polat</h3>
-                    </div>
-
-                    <p class="muted">Game Designer</p>
-
-                    <p>Oynanış döngüsü, seviye/görev tasarımı ve dengeleme. Prototipleme ve kullanıcı geri bildirimi ile
-                        iterasyon.</p>
-
-                    <div class="tags">
-
-                        <span class="tag">Core Loop</span>
-                        <span class="tag">Level Design</span>
-                        <span class="tag">Balance</span>
-                        <span class="tag">Prototyping</span>
-
-                    </div>
-
-                    <div class="social-icons">
-
-                        <a aria-label="Github" class="social-icon" href="https://github.com/Gamze655"
-                            rel="noopener noreferrer" target="_blank" title="Github"><img alt="Github" height="20"
-                                src="icons/github.svg" width="20" /></a>
-
-                        <a aria-label="Linkedin" class="social-icon"
-                            href="https://www.linkedin.com/in/gamze-polat-b8a8b6298/" rel="noopener noreferrer"
-                            target="_blank" title="Linkedin"><img alt="Linkedin" height="20" src="icons/linkedin.svg"
-                                width="20" /></a>
-
-                    </div>
-
-                </div>
-                <!-- #endregion Gamze Polat-->
-
-
-
-                <!-- #region Hamza Ergüven-->
-                <div class="card card-hover section-animate">
-                    <div class="row">
-                        <div class="dot"></div>
-                        <h3>Hamza Ergüven</h3>
-                    </div>
-
-                    <p class="muted">QA/Test &amp; Test</p>
-                    <p>Fonksiyonel/smoke/regression testleri, kullanılabilirlik oturumları ve bug triage. Cihaz matrisi
-                        takibi.</p>
-
-                    <div class="tags">
-
-                        <span class="tag">Test Plan</span>
-                        <span class="tag">Regression</span>
-                        <span class="tag">Usability</span>
-                        <span class="tag">Bug Triage</span>
-
-                    </div>
-                    <div class="social-icons">
-
-                        <a aria-label="Github" class="social-icon" href="https://github.com/MrN0b0dyy"
-                            rel="noopener noreferrer" target="_blank" title="Github"><img alt="Github" height="20"
-                                src="icons/github.svg" width="20" /></a>
-
-                        <a aria-label="Linkedin" class="social-icon" href="https://www.linkedin.com/in/hamzaerguven/"
-                            rel="noopener noreferrer" target="_blank" title="Linkedin"><img alt="Linkedin" height="20"
-                                src="icons/linkedin.svg" width="20" /></a>
-
-                    </div>
-                </div>
-                <!-- #endregion Hamza Ergüven-->
-
             </div>
         </section>
-        <!-- #endregion TAKIM — Ekip Bilgileri -->
 
-
-
-        <!-- #region İletişim bölümü - Bize ulaşın -->
-
-        <section class="section-animate" id="iletisim">
+        <!-- İletişim -->
+        <section id="iletisim" class="section-animate">
             <div class="kicker">Bize Ulaşın</div>
             <h2>İletişim</h2>
             <p class="sub">Projelerimiz hakkında sorularınız, işbirliği teklifleriniz veya geri bildirimleriniz için
                 bizimle iletişime geçin.</p>
 
-            <!-- İletişim kartları - İki sütunlu düzen -->
             <div class="grid cols-2">
                 <div class="card card-hover">
                     <h3>Doğrudan İletişim</h3>
@@ -465,51 +295,47 @@
                 </div>
 
                 <div class="card card-hover">
-                    <h3>Sosyal Medya</h3>
-                    <p>GitHub ve LinkedIn üzerinden profesyonel ağımıza katılın, güncellemeleri takip edin.</p>
-                    <div class="spacer"></div>
-
-                    <a class="link" href="https://github.com/Vipera-Dev">GitHub</a><br />
-                    <a class="link" href="https://www.linkedin.com/company/vipera-dev/">LinkedIn</a>
-
+                    <h3>İletişim Formu</h3>
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <label>
+                            <span>İsim</span>
+                            <input type="text" name="name" placeholder="Adınız" required />
+                        </label>
+                        <label>
+                            <span>E-posta</span>
+                            <input type="email" name="email" placeholder="ornek@eposta.com" required />
+                        </label>
+                        <label>
+                            <span>Mesaj</span>
+                            <textarea name="message" rows="4" placeholder="Merhaba..." required></textarea>
+                        </label>
+                        <button class="btn" type="submit">Gönder</button>
+                        <p class="form-note muted">Form, e-posta istemcinizde bir taslak açar. Göndermeden önce
+                            düzenleyebilirsiniz.</p>
+                    </form>
                 </div>
             </div>
         </section>
-        <!-- #endregion İLETİŞİM — Form / Linkler / Adres -->
-
     </main>
 
-
-
-    <!-- Alt bilgi bölümü - Footer -->
-
-
-    <!-- #region FOOTER — Alt Bilgi / Hızlı Linkler / Telif -->
+    <!-- FOOTER -->
     <footer>
-
         <div class="footer-inner">
-            <!-- Logo ve açıklama - Marka bilgileri -->
             <div>
-                <div class="logo">
-
-                    <img alt="ViperaDev logo" class="logo-img" height="28" src="icons/logo.svg" width="28" />
-                    <span onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
-                        style="cursor:pointer;">ViperaDev</span>
-
-                </div>
-
+                <a class="logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                    <img class="logo-img" src="icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
+                    <span>ViperaDev</span>
+                </a>
                 <div class="spacer"></div>
                 <p class="muted">ViperaDev, oyunlar ve oyun geliştirme araçları üretir. Öğrenme + eğlence kesişiminde,
                     toplulukla büyür.</p>
             </div>
 
-
-            <!-- Hızlı navigasyon linkleri - Site haritası -->
             <div>
                 <h4 class="h4">Kısa Linkler</h4>
                 <div class="spacer"></div>
                 <nav>
-                    <a class="link" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Ana
+                    <a class="link" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Ana
                         Sayfa</a><br />
                     <a class="link" href="#hakkinda">Hakkında</a><br />
                     <a class="link" href="#projeler">Projeler</a><br />
@@ -519,37 +345,66 @@
                 </nav>
             </div>
 
-
-
-            <!-- İletişim bilgileri - Sosyal medya ve e-posta -->
-
             <div>
                 <h4 class="h4">Hızlı İletişim</h4>
                 <div class="spacer"></div>
                 <div>
-
                     <a class="link" href="mailto:viperadev@gmail.com">viperadev@gmail.com</a><br />
                     <a class="link" href="https://github.com/yavuzselimyigit">GitHub</a><br />
                     <a class="link" href="https://www.linkedin.com/company/vipera-dev/">LinkedIn</a>
-
                 </div>
             </div>
         </div>
 
-
-        <!-- Telif hakkı bilgisi - Alt bilgi -->
         <div class="copyright">
             © 2025 ViperaDev • "Enter'a bas. Efsane başlasın."
         </div>
     </footer>
-    <!-- #endregion FOOTER — Alt Bilgi / Hızlı Linkler / Telif -->
 
+    <!-- PROJE MODALLARI -->
+    <!-- Mission: Budy Modal -->
+    <div id="modal-mb" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-mb-title"
+        aria-hidden="true">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-dialog" role="document" tabindex="-1">
+            <button class="modal-close" aria-label="Kapat" data-close="true">×</button>
+            <h3 id="modal-mb-title">Mission: Budy — Detaylar</h3>
+            <p>Mission: Budy; aksiyon/RPG öğelerini öğretici içerikle birleştiren hibrit bir deneyimdir. Mobil ve PC
+                hedefleriyle; görev tabanlı ilerleme, bölge keşfi ve topluluk geri bildirimiyle iterasyon yapar.</p>
+            <ul class="modal-list">
+                <li>Hedef platformlar: PC, Android</li>
+                <li>Teknoloji: Unity &amp; Unreal prototipleri</li>
+                <li>Plan: Prototip → Dikey dilim → Kapalı test</li>
+            </ul>
+            <div class="row">
+                <a class="btn" href="https://github.com/ViperaDev/MissionBudy" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn secondary" href="#" aria-disabled="true">İndir (yakında)</a>
+            </div>
+        </div>
+    </div>
 
+    <!-- VipoDeck Modal -->
+    <div id="modal-vd" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-vd-title"
+        aria-hidden="true">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-dialog" role="document" tabindex="-1">
+            <button class="modal-close" aria-label="Kapat" data-close="true">×</button>
+            <h3 id="modal-vd-title">VipoDeck — Detaylar</h3>
+            <p>VipoDeck; kişisel üretkenlik için kart tabanlı bir süper uygulamadır. Profiller, JSON yapılandırma,
+                global kısayol ve sistem tepsisi entegrasyonuyla esnek bir deneyim sunar.</p>
+            <ul class="modal-list">
+                <li>Teknoloji: Python, PyQt5</li>
+                <li>Özellikler: Profiller, arama, kısayollar, tema</li>
+                <li>Plan: v1.4.4 tabanından modülerleşme</li>
+            </ul>
+            <div class="row">
+                <a class="btn" href="https://github.com/ViperaDev/VipoDeck" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn secondary" href="#" aria-disabled="true">İndir (yakında)</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- #region SCRIPT — Sayfa içi yardımcı JS (gerekiyorsa) -->
     <script src="app.js"></script>
-    <!-- #endregion SCRIPT -->
-
 </body>
 
 </html>
