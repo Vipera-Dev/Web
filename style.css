@@ -954,3 +954,35 @@ h1::after {
     justify-content: center;
   }
 }
+
+/* Page hero */
+.page-hero {
+  padding: 120px 16px 40px;
+  min-height: 36vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.page-hero-inner {
+  max-width: var(--max);
+  width: 100%;
+}
+.page-hero h1 {
+  font-size: 42px;
+  margin: 16px 0;
+}
+@media (max-width: 767px) {
+  .page-hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* Feature list */
+.feature-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: #cbd5e1;
+}
+.feature-list li {
+  margin: 6px 0;
+}
