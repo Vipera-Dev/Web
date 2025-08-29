@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
 
+
+
+<!-- #region <BAŞLIK ve META> -->
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,8 +23,12 @@
 
     <link rel="stylesheet" href="style.css" />
 </head>
+<!-- #endregion <BAŞLIK ve META> -->
+
+
 
 <body>
+    <!-- #region <HEADER / NAV> -->
     <!-- Skip to content -->
     <a class="skip-link" href="#ana-icerik">İçeriğe atla</a>
 
@@ -58,8 +66,12 @@
             </nav>
         </div>
     </header>
+    <!-- #endregion <HEADER / NAV> -->
+
+
 
     <main id="ana-icerik">
+        <!-- #region HERO -->
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
@@ -109,7 +121,11 @@
                 </div>
             </div>
         </section>
+        <!-- #endregion HERO -->
 
+
+
+        <!-- #region HAKKINDA -->
         <!-- Hakkında -->
         <section id="hakkinda" class="section-animate">
             <div class="kicker">Stüdyo</div>
@@ -142,22 +158,35 @@
                 </div>
             </div>
         </section>
+        <!-- #endregion HAKKINDA -->
 
-        <!-- PROJELER -->
+
+        <!-- #region PROJELER -->
+
+
         <section class="section-animate" id="projeler">
             <div class="kicker">Üretimler</div>
             <h2>Projeler</h2>
             <p class="sub">Prototiplerden ürünleşen araçlara: güncel çalışmaların kısa listesi.</p>
 
-            <!-- FİLTRE KONTROLLERİ -->
+
+
+            <!-- #region FİLTRE KONTROLLERİ -->
             <div class="filter-bar" role="tablist" aria-label="Proje kategorileri">
                 <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Tümü</button>
                 <button class="filter-btn" data-filter="game" role="tab" aria-selected="false">Oyunlar</button>
                 <button class="filter-btn" data-filter="tool" role="tab" aria-selected="false">Araçlar</button>
             </div>
+            <!-- #endregion FİLTRE KONTROLLERİ -->
 
+
+
+            <!-- #region PROJE LİSTESİ -->
             <div class="grid cols-3 project-grid">
-                <!-- Mission: Budy (OYUN) -->
+
+
+
+                <!-- #region Mission: Budy (OYUN) -->
                 <article class="card card-hover project-card" data-category="game" id="mission-budy"
                     data-share-url="https://viperadev.com/mission-budy.html"
                     data-github-url="https://github.com/ViperaDev/MissionBudy"
@@ -197,10 +226,11 @@
                     </div>
 
                 </article>
+                <!-- #endregion Mission: Budy (OYUN) -->
 
 
 
-                <!-- VipoDeck (ARAÇ) -->
+                <!-- #region VipoDeck (ARAÇ) -->
                 <article class="card card-hover project-card" data-category="tool" id="vipodeck"
                     data-share-url="https://viperadev.com/vipodeck.html"
                     data-github-url="https://github.com/ViperaDev/VipoDeck"
@@ -235,17 +265,29 @@
                     </div>
 
                 </article>
-            </div>
-        </section>
+                <!-- #endregion VipoDeck (ARAÇ) -->
 
-        <!-- Blog / Devlog -->
+
+
+            </div>
+            <!-- #endregion PROJE LİSTESİ -->
+
+
+
+        </section>
+        <!-- #endregion PROJELER -->
+
+
+
+        <!-- #region Blog / Devlog -->
         <section id="blog" class="section-animate">
             <div class="kicker">Günlükler</div>
             <h2>Blog & Devlog</h2>
             <p class="sub">Teknofest süreçleri, oyun geliştirme notları ve yol haritaları.</p>
 
+            <!-- #region Blog Yazıları -->
             <div class="grid cols-3">
-                <!-- Post 1 -->
+                <!-- #region Post 1 -->
                 <article class="card card-hover post-card">
                     <div class="post-cover">
                         <img src="pages/Games/mission-budy/images/mission-budy.png" alt="Mission: Budy devlog kapak"
@@ -260,8 +302,11 @@
                             rel="noopener">Medium</a>
                     </div>
                 </article>
+                <!-- #endregion Post 1 -->
 
-                <!-- Post 2 -->
+
+
+                <!-- #region Post 2 -->
                 <article class="card card-hover post-card">
                     <div class="post-cover">
                         <img src="pages/Apps/viperadeck/images/ViperaDeck.png" alt="VipoDeck devlog kapak"
@@ -277,8 +322,11 @@
                             rel="noopener">GitHub</a>
                     </div>
                 </article>
+                <!-- #endregion Post 2 -->
 
-                <!-- Post 3 (placeholder) -->
+
+
+                <!-- #region Post 3 -->
                 <article class="card card-hover post-card">
                     <div class="post-cover placeholder"></div>
                     <h3 class="post-title">Teknofest — Hazırlık ve Öğrendiklerimiz</h3>
@@ -290,16 +338,30 @@
                             rel="noopener">X</a>
                     </div>
                 </article>
+                <!-- #endregion Post 3 -->
+
+
+
             </div>
+            <!-- #endregion Blog Yazıları -->
+
+
+
         </section>
+        <!-- #endregion Blog / Devlog -->
 
 
-        <!-- Araçlar -->
+
+        <!-- #region Araçlar -->
         <section id="araclar" class="section-animate">
             <div class="kicker">Geliştirme Süreci</div>
             <h2>Araçlar ve Süreç</h2>
             <p class="sub">Oyun geliştirme için pratik araçlar, şablonlar ve iş akışları.</p>
             <div class="grid cols-2">
+
+
+
+                <!-- #region Araçlar -->
                 <div class="card card-hover">
                     <h3>ViperaDev Tooling</h3>
                     <p>Oyun içi yardımcı scriptler, build araçları ve pipeline notları. 2D/3D için sade ve tekrar
@@ -307,23 +369,35 @@
                     <div class="spacer"></div>
                     <a class="link" href="#">Döküman yakında</a>
                 </div>
+                <!-- #endregion Araçlar -->
+
+
+
+                <!-- #region Kalite ve Güvenlik -->
                 <div class="card card-hover">
                     <h3>Kalite ve Güvenlik</h3>
                     <p>Versiyon kontrol (GitHub), temel test/QA akışları ve proje şablonlarıyla istikrarlı ilerleme.</p>
                     <div class="spacer"></div>
                     <a class="link" href="#">Şablonlar yakında</a>
                 </div>
+                <!-- #endregion Kalite ve Güvenlik -->
             </div>
         </section>
+        <!-- #endregion Araçlar -->
 
-        <!-- Takım -->
+
+
+        <!-- #region Takım -->
         <section id="takim" class="section-animate">
             <div class="kicker">Ekip</div>
             <h2>Takım Rolleri</h2>
             <p class="sub">Roller ve sorumluluklar net: üretim hattı uyumu ve hızlı iterasyon.</p>
 
             <div class="grid cols-2">
-                <!-- Yavuz -->
+
+
+
+                <!-- #region Yavuz Selim Yiğit -->
                 <div class="card card-hover section-animate">
                     <div class="row">
                         <div class="dot"></div>
@@ -359,8 +433,11 @@
                         </a>
                     </div>
                 </div>
+                <!-- #endregion Yavuz Selim Yiğit -->
 
-                <!-- Yakında kartı -->
+
+
+                <!-- #region Yakında kartı -->
                 <div class="card card-hover section-animate">
                     <div class="row">
                         <div class="dot"></div>
@@ -377,10 +454,17 @@
                     </div>
                     <a class="link" href="#iletisim">İletişime geç</a>
                 </div>
+                <!-- #endregion Yakında kartı -->
+
+
+
             </div>
         </section>
+        <!-- #endregion Takım -->
 
-        <!-- İletişim -->
+
+
+        <!-- #region İletişim -->
         <section id="iletisim" class="section-animate">
             <div class="kicker">Bize Ulaşın</div>
             <h2>İletişim</h2>
@@ -388,13 +472,21 @@
                 bizimle iletişime geçin.</p>
 
             <div class="grid cols-2">
+
+
+
+                <!-- #region Doğrudan İletişim  -->
                 <div class="card card-hover">
                     <h3>Doğrudan İletişim</h3>
                     <p>E-posta yoluyla doğrudan ulaşabilir, projeleriniz hakkında konuşabilirsiniz.</p>
                     <div class="spacer"></div>
                     <a class="link" href="mailto:viperadev@gmail.com">viperadev@gmail.com</a>
                 </div>
+                <!-- #endregion Doğrudan İletişim -->
 
+
+
+                <!-- #region İletişim Formu -->
                 <div class="card card-hover">
                     <h3>İletişim Formu</h3>
                     <form id="contact-form" class="contact-form" novalidate>
@@ -415,10 +507,17 @@
                             düzenleyebilirsiniz.</p>
                     </form>
                 </div>
+                <!-- #endregion İletişim Formu -->
+
+
+
             </div>
         </section>
+        <!-- #endregion İletişim -->
 
-        <!-- Newsletter -->
+
+
+        <!-- #region Newsletter -->
         <section id="bulten" class="section-animate">
             <div class="kicker">Güncel Kal</div>
             <h2>Newsletter / Mail Listesi</h2>
@@ -451,7 +550,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- #endregion Newsletter -->
     </main>
 
     <!-- FOOTER -->
@@ -498,48 +597,7 @@
         </div>
     </footer>
 
-    <!-- PROJE MODALLARI -->
-    <!-- Mission: Budy Modal -->
-    <div id="modal-mb" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-mb-title"
-        aria-hidden="true">
-        <div class="modal-backdrop" data-close="true"></div>
-        <div class="modal-dialog" role="document" tabindex="-1">
-            <button class="modal-close" aria-label="Kapat" data-close="true">×</button>
-            <h3 id="modal-mb-title">Mission: Budy — Detaylar</h3>
-            <p>Mission: Budy; aksiyon/RPG öğelerini öğretici içerikle birleştiren hibrit bir deneyimdir. Mobil ve PC
-                hedefleriyle; görev tabanlı ilerleme, bölge keşfi ve topluluk geri bildirimiyle iterasyon yapar.</p>
-            <ul class="modal-list">
-                <li>Hedef platformlar: PC, Android</li>
-                <li>Teknoloji: Unity &amp; Unreal prototipleri</li>
-                <li>Plan: Prototip → Dikey dilim → Kapalı test</li>
-            </ul>
-            <div class="row">
-                <a class="btn" href="https://github.com/ViperaDev/MissionBudy" target="_blank" rel="noopener">GitHub</a>
-                <a class="btn secondary" href="#" aria-disabled="true">İndir (yakında)</a>
-            </div>
-        </div>
-    </div>
 
-    <!-- VipoDeck Modal -->
-    <div id="modal-vd" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-vd-title"
-        aria-hidden="true">
-        <div class="modal-backdrop" data-close="true"></div>
-        <div class="modal-dialog" role="document" tabindex="-1">
-            <button class="modal-close" aria-label="Kapat" data-close="true">×</button>
-            <h3 id="modal-vd-title">VipoDeck — Detaylar</h3>
-            <p>VipoDeck; kişisel üretkenlik için kart tabanlı bir süper uygulamadır. Profiller, JSON yapılandırma,
-                global kısayol ve sistem tepsisi entegrasyonuyla esnek bir deneyim sunar.</p>
-            <ul class="modal-list">
-                <li>Teknoloji: Python, PyQt5</li>
-                <li>Özellikler: Profiller, arama, kısayollar, tema</li>
-                <li>Plan: v1.4.4 tabanından modülerleşme</li>
-            </ul>
-            <div class="row">
-                <a class="btn" href="https://github.com/ViperaDev/VipoDeck" target="_blank" rel="noopener">GitHub</a>
-                <a class="btn secondary" href="#" aria-disabled="true">İndir (yakında)</a>
-            </div>
-        </div>
-    </div>
 
     <script src="app.js"></script>
 </body>
