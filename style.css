@@ -1254,3 +1254,36 @@ h1::after {
     height: 140px;
   }
 }
+
+/* Newsletter */
+.newsletter-form {
+  display: grid;
+  gap: 10px;
+}
+.newsletter-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #cfe3ff;
+}
+.newsletter-form input[type="email"] {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.newsletter-form input[type="email"]:focus {
+  outline: 2px solid var(--c1);
+  outline-offset: 2px;
+}
+.newsletter-form .consent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+.newsletter-form .consent input {
+  width: 18px;
+  height: 18px;
+}
