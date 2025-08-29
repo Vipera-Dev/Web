@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Sayfa bulunamadı | ViperaDev</title>
+    <meta name="description" content="Aradığınız sayfa bulunamadı." />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="404 — Sayfa bulunamadı" />
+    <meta property="og:description" content="Aradığınız sayfa bulunamadı." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        /* 404'e ufak dokunuş: mevcut tasarımla uyumlu */
+        .error-wrap {
+            min-height: 70vh;
+            display: grid;
+            place-items: center;
+            padding: 40px 20px;
+        }
+
+        .error-card {
+            max-width: 760px;
+            width: 100%;
+        }
+
+        .error-code {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .error-sub {
+            color: var(--muted);
+            margin: 8px 0 18px;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 6px;
+        }
+
+        .search-inline {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 14px;
+        }
+
+        .search-inline input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--line);
+            color: #fff;
+            border-radius: 12px;
+            padding: 10px 12px;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#icerik">İçeriğe atla</a>
+
+    <!-- HEADER (kısa logo) -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a class="logo" href="/index.html" aria-label="ViperaDev ana sayfa">
+                <img class="logo-img" src="/icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
+                <span>ViperaDev</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="icerik" class="error-wrap">
+        <section class="card card-hover error-card section-animate visible">
+            <div class="row">
+                <div class="dot"></div>
+                <h1 class="error-code">404</h1>
+            </div>
+            <p class="error-sub">Aradığınız sayfayı bulamadık ya da taşınmış olabilir.</p>
+
+            <div class="quick-links">
+                <a class="btn" href="/index.html">Ana Sayfa</a>
+                <a class="btn secondary" href="/index.html#projeler">Projeler</a>
+                <a class="btn secondary" href="/index.html#takim">Takım</a>
+                <a class="btn secondary" href="/index.html#iletisim">İletişim</a>
+            </div>
+
+            <!-- Hafif arama: site içinde popüler anahtar kelimeler -->
+            <div class="search-inline">
+                <input id="err-search" type="search" placeholder="Anahtar kelime: mission, deck, unity, unreal..."
+                    aria-label="Site içi arama" />
+                <button class="btn" id="err-search-btn" type="button">Ara</button>
+            </div>
+            <p class="hint">İpucu: “mission”, “vipodeck”, “unity”, “unreal”, “rpg”, “python”, “pyqt5” gibi deneyin.</p>
+
+            <div class="spacer"></div>
+            <div class="row">
+                <a class="link" id="report-link" href="#">Hatalı bağlantıyı bildir</a>
+                <span class="ml-auto muted" id="bad-url"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="logo" href="/index.html">
+                    <img class="logo-img" src="/icons/logo.svg" width="50" height="50" alt="ViperaDev logo" />
+                    <span>ViperaDev</span>
+                </a>
+                <div class="spacer"></div>
+                <p class="muted">Öğrenme + eğlence kesişiminde, toplulukla büyür.</p>
+            </div>
+            <div>
+                <h4 class="h4">Kısa Linkler</h4>
+                <div class="spacer"></div>
+                <nav>
+                    <a class="link" href="/index.html#projeler">Projeler</a><br />
+                    <a class="link" href="/index.html#takim">Takım</a><br />
+                    <a class="link" href="/index.html#iletisim">İletişim</a>
+                </nav>
+            </div>
+            <div>
+                <h4 class="h4">Hızlı İletişim</h4>
+                <div class="spacer"></div>
+                <div>
+                    <a class="link" href="mailto:viperadev@gmail.com">viperadev@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© 2025 ViperaDev</div>
+    </footer>
+
+    <script>
+        // Bozuk URL'i göster
+        const bad = document.getElementById('bad-url');
+        const fullURL = window.location.href;
+        bad.textContent = fullURL;
+
+        // Hatalı link bildir (mailto)
+        const rep = document.getElementById('report-link');
+        const subj = encodeURIComponent('Kırık bağlantı bildirimi (404)');
+        const body = encodeURIComponent(`Kırık URL: ${fullURL}\nKaynağım: 404 sayfası\nNot: `);
+        rep.href = `mailto:viperadev@gmail.com?subject=${subj}&body=${body}`;
+
+        // Basit arama: bilinen sayfalara yönlendir
+        const searchBtn = document.getElementById('err-search-btn');
+        const searchInput = document.getElementById('err-search');
+        const Go = () => {
+            const q = (searchInput.value || '').toLowerCase().trim();
+            if (!q) return;
+            // Çok basit anahtar kelime eşleştirme (statik site için)
+            if (q.includes('mission') || q.includes('budy')) location.href = '/pages/Games/mission-budy/mission-budy.html';
+            else if (q.includes('deck') || q.includes('vipo') || q.includes('vipera')) location.href = '/pages/Apps/viperadeck/viperadeck.html';
+            else if (q.includes('proj')) location.href = '/index.html#projeler';
+            else if (q.includes('tak')) location.href = '/index.html#takim';
+            else if (q.includes('ileti') || q.includes('mail')) location.href = '/index.html#iletisim';
+            else location.href = '/index.html';
+        };
+        searchBtn.addEventListener('click', Go);
+        searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') Go(); });
+
+        // İsteğe bağlı: 10 sn sonra otomatik ana sayfa
+        // setTimeout(()=>{ location.href = '/index.html'; }, 10000);
+    </script>
+</body>
+
+</html>
