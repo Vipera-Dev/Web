@@ -1040,14 +1040,14 @@ h1::after {
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0;
-  transform: scale(1.04);
-  transition: opacity 0.35s ease, transform 0.5s ease;
-}
-.project-card:hover .preview img,
-.project-card:hover .preview video {
   opacity: 1;
   transform: scale(1);
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .preview img,
+.project-card:hover .preview video {
+  transform: scale(1.03);
 }
 
 /* Küçük ekran yüksekliği */
