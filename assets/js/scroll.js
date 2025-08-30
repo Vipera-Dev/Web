@@ -11,3 +11,4 @@ export function initScrollReveal() {
   );
   document.querySelectorAll(".section-animate").forEach((n) => io.observe(n));
 }
+

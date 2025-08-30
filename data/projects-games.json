@@ -1,0 +1,15 @@
+[
+  {
+    "id": "mission-budy",
+    "title": "Mission: Budy",
+    "category": "game",
+    "description": "Topluluk odaklı aksiyon/RPG; mobil ve PC hedefli prototip.",
+    "image": "pages/Games/mission-budy/images/mission-budy.png",
+    "tags": ["Unreal", "Unity", "Prototip", "Aksiyon", "RPG"],
+    "github": "https://github.com/ViperaDev/MissionBudy",
+    "url": "/pages/Games/mission-budy/mission-budy.html",
+    "version": "v0.2",
+    "status": ["Prototip", "Yeni"],
+    "shareImage": "pages/Games/mission-budy/images/mission-budy.png"
+  }
+]

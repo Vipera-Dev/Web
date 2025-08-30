@@ -1,0 +1,15 @@
+[
+  {
+    "id": "vipodeck",
+    "title": "VipoDeck",
+    "category": "tool",
+    "description": "Kart tabanlı üretkenlik: profiller, JSON yapılandırma, global kısayol…",
+    "image": "pages/Apps/viperadeck/images/ViperaDeck.png",
+    "tags": ["Python", "PyQt5", "Productivity", "Super App"],
+    "github": "https://github.com/ViperaDev/VipoDeck",
+    "url": "/pages/Apps/viperadeck/viperadeck.html",
+    "version": "v1.5",
+    "status": ["Beta"],
+    "shareImage": "pages/Apps/viperadeck/images/ViperaDeck.png"
+  }
+]

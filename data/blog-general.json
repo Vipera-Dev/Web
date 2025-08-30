@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "Taslak",
+    "title": "Taslak Blog Yazısı - Deneme Yazısı",
+    "excerpt": "Ekip, projeler, yol haritası ve topluluk: ViperaDev’de son bir ayın özeti. Taslak olarak hazırlanan bir yazıdır.",
+    "cover": "/assets/blog/taslak/taslak.png",
+    "date": "2025-07-01",
+    "type": "Taslak",
+    "readUrl": "/assets/blog/taslak/taslak.html"
+  }
+]
